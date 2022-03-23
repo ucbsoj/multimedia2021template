@@ -1,0 +1,52 @@
+@import '../fonts/fonts.css';
+@import 'bootstrap.min.css';
+
+html,body{
+	font-family: 'Crimson Text', serif;
+	font-size: 1.2rem;
+}
+
+h1,h2,h3,h4,h5,h6{
+	font-family: Lato, sans-serif;
+}
+
+/** clearfix for position:sticky **/
+.sticky:before,
+.sticky:after {
+    content: '';
+    display: table;
+}
+
+
+/** Looping Background Video **/
+.looping-background-video{
+	position: relative;
+	top: 0;
+	left: 0;
+	width: 100vw;
+	height: 100vh;
+	overflow: hidden;
+	background-color: rgba(0,0,0,0.6); 	/* shade over video for foreground-background separation */
+	color: #fff; 						/* make text color white */
+}
+.looping-background-video video{
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	width: auto;
+	height: 100vh;
+	z-index: -100;
+}
+@media (min-aspect-ratio:16/9){
+	.looping-background-video video{
+		width: 100vw;
+		height: auto;
+	}
+}
+
+
+/** Sticky for scrollytelling layout **/
+[data-sticky-graphic] {
+	top: 35%;
+}
